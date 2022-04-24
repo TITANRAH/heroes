@@ -1,0 +1,71 @@
+<mat-sidenav-container fullscreen>
+    <!-- mode push empuja el contenido hacia la derecha al pulsar el nav -->
+    <mat-sidenav #sidenav mode="push">
+       <!-- click .toggle()es propio de angular material y al referenciarlo con el #sidenav que esta en mat sidenav raliza eso -->
+       <!-- este menu esta dentro del nav list -->
+        <mat-toolbar color="primary">
+            <span>Menú </span>
+            <span class="spacer"></span>
+            <button mat-icon-button
+                    (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>           
+        </mat-toolbar>
+        <!-- fin menu esta dentro del nav list -->
+
+        <!-- listado de opcion es del menu lateral sidenav -->
+        <mat-nav-list>
+            <a routerLink="./listado"
+                mat-list-item
+                (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>label</mat-icon>
+                <span>Listado de Heroes</span>
+            </a>
+
+            <a routerLink="./agregar"
+                mat-list-item
+                (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>add</mat-icon>
+                <span>Añadir Héroe</span>
+            </a>
+
+            <a routerLink="./buscar"
+            mat-list-item
+            (click)="sidenav.toggle()">
+            <mat-icon mat-list-icon>search</mat-icon>
+            <span>Buscar Héroe</span>
+        </a>
+        </mat-nav-list>
+        <!-- fin listado de opcion es del menu lateral sidenav -->
+
+    </mat-sidenav>
+
+    <!-- click .toggle()es propio de angular material y al referenciarlo con el #sidenav que esta en mat sidenav raliza eso -->
+
+    <!-- principal -->
+    <mat-toolbar>
+        <span>Menú</span>
+        <span class="spacer"></span>
+        <button mat-icon-button
+                (click)="sidenav.toggle()">
+            <mat-icon >menu</mat-icon>
+        </button>     
+        
+        <button mat-button>
+            Logout
+        </button>
+    </mat-toolbar>
+    <!-- fin principal -->
+
+    <span class="spacer"></span>
+
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+
+</mat-sidenav-container>    
+
+
+   
+
+
